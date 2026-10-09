@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cec482ekplyuj"]
+
+[ext_resource type="Script" uid="uid://vlc1k1m2ruv2" path="res://Scripts/main_menu.gd" id="1_1edw4"]
+[ext_resource type="Texture2D" uid="uid://l1e1nn7s2rr3" path="res://Assets/Art/Main Menu/IMG_2256.png" id="1_xvotp"]
+[ext_resource type="Texture2D" uid="uid://rs25cqemdwic" path="res://Assets/Art/Main Menu/IMG_2258.png" id="2_1edw4"]
+[ext_resource type="Texture2D" uid="uid://cmcrhi7g8kkg4" path="res://Assets/Art/Main Menu/IMG_2255.png" id="3_vnflv"]
+[ext_resource type="Texture2D" uid="uid://dsxc0v867prwi" path="res://Assets/Art/Main Menu/IMG_2259.png" id="4_ymwpv"]
+[ext_resource type="Texture2D" uid="uid://dhq2ferj80fa2" path="res://Assets/Art/Main Menu/Untitled - September 21, 2026 20.03.jpeg" id="5_1o627"]
+[ext_resource type="Texture2D" uid="uid://bgapc2yqct622" path="res://Assets/Art/Main Menu/IMG_2254.png" id="6_2ey7y"]
+[ext_resource type="Texture2D" uid="uid://dq3p3tjghq8he" path="res://Assets/Art/Main Menu/IMG_2252.png" id="6_ymwpv"]
+[ext_resource type="Texture2D" uid="uid://cfm6c7r3yhnuo" path="res://Assets/Art/Main Menu/IMG_2257.png" id="7_1o627"]
+[ext_resource type="AudioStream" uid="uid://ch3ofaue8ch6i" path="res://Assets/Music/Delta’s Diary Theme.mp3" id="10_1o627"]
+
+[node name="Main Menu" type="Node2D" unique_id=1284540658]
+z_index = 1
+script = ExtResource("1_1edw4")
+
+[node name="Main menu sprites" type="Node2D" parent="." unique_id=413956490]
+
+[node name="Front layer" type="Node2D" parent="Main menu sprites" unique_id=1436369473]
+
+[node name="Title" type="Sprite2D" parent="Main menu sprites/Front layer" unique_id=944174987]
+texture = ExtResource("1_xvotp")
+
+[node name="Buttons" type="Sprite2D" parent="Main menu sprites/Front layer" unique_id=1748816024]
+texture = ExtResource("2_1edw4")
+
+[node name="Station" type="Sprite2D" parent="Main menu sprites/Front layer" unique_id=1394269178]
+texture = ExtResource("3_vnflv")
+
+[node name="2nd layer" type="Node2D" parent="Main menu sprites" unique_id=543277606]
+z_index = -1
+
+[node name="Star_fade 2" type="Sprite2D" parent="Main menu sprites/2nd layer" unique_id=434145141]
+texture = ExtResource("7_1o627")
+
+[node name="Star_fade 1" type="Sprite2D" parent="Main menu sprites/2nd layer" unique_id=606370861]
+texture = ExtResource("6_ymwpv")
+
+[node name="Stars" type="Sprite2D" parent="Main menu sprites/2nd layer" unique_id=174578210]
+texture = ExtResource("4_ymwpv")
+
+[node name="Back layer" type="Node2D" parent="Main menu sprites" unique_id=26728429]
+z_index = -2
+
+[node name="Comic dust" type="Sprite2D" parent="Main menu sprites/Back layer" unique_id=1210947726]
+scale = Vector2(3, 3)
+texture = ExtResource("5_1o627")
+
+[node name="background" type="Sprite2D" parent="Main menu sprites/Back layer" unique_id=679374863]
+texture = ExtResource("6_2ey7y")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1703996622]
+position = Vector2(0, 32.565)
+zoom = Vector2(0.26, 0.26)
+
+[node name="Play" type="Button" parent="." unique_id=1800517975]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+offset_left = -1187.0001
+offset_top = 282.0
+offset_right = -787.0001
+offset_bottom = 482.0
+scale = Vector2(1.6572024, 1.8853791)
+toggle_mode = true
+
+[node name="Settings" type="Button" parent="." unique_id=951900419]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+offset_left = -1141.0001
+offset_top = 745.0
+offset_right = -793.7251
+offset_bottom = 845.0
+scale = Vector2(1.6572024, 1.8853791)
+toggle_mode = true
+
+[node name="Credits" type="Button" parent="." unique_id=1245395804]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+offset_left = -1132.0001
+offset_top = 1030.0001
+offset_right = -782.0001
+offset_bottom = 1130.0001
+scale = Vector2(1.6572024, 1.8853791)
+toggle_mode = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1702547876]
+stream = ExtResource("10_1o627")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

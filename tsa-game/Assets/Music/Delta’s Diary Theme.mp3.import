@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ch3ofaue8ch6i"
+path="res://.godot/imported/Delta’s Diary Theme.mp3-a085b94cb2425dcf14f72d1c16748571.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Delta’s Diary Theme.mp3"
+dest_files=["res://.godot/imported/Delta’s Diary Theme.mp3-a085b94cb2425dcf14f72d1c16748571.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
